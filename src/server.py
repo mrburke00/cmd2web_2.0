@@ -42,7 +42,7 @@ def index():
         args['service'] = 'parse'
         args['sequence'] = sequence
         request.args = args
-        service()
+        data = service()
     return render_template('parse.html', jsonfile=data)
 
 @app.route('/')
@@ -84,7 +84,7 @@ def service():
 
     f.close()
 
-    return service_instance.process_result(out_file_name)
+    return service_instance.process_result(out_file_name, script = service)
 
 if __name__ == '__main__':
 
