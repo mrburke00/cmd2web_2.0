@@ -1,0 +1,57 @@
+[    
+    {
+        "name" : "parse",
+        "arguments" : 
+        [
+
+            {
+                "name" : "compiler",
+                "fixed" : "true",
+                "type" : "string",
+                "value" : "gfortran -o"
+            },
+            {
+                "name" : "executable",
+                "fixed" : "true",
+                "type" : "string",
+                "value" : "/Users/DBurke/Documents/Layerlab/parse_webapp/cmd2web_2.0/src/web_src/static/js/Parse.exe"
+            },
+            {
+                "name" : "script",
+                "fixed" : "true",
+                "type" : "string",
+                "value" : "/Users/DBurke/Documents/Layerlab/parse_webapp/cmd2web_2.0/src/web_src/static/js/Parse.f"
+            },
+            {
+                "name" : "execute_command",
+                "fixed" : "true",
+                "type" : "string",
+                "value" : "/Users/DBurke/Documents/Layerlab/parse_webapp/cmd2web_2.0/src/web_src/static/js/./Parse.exe"
+            },
+            {
+                "name" : "sequence",
+                "fixed" : "false",
+                "type" : "string"
+            }
+
+        ],
+
+        "command":
+        [
+            "$compiler",
+            "$executable",
+            "$script",
+            "&&",
+            "$execute_command",
+            "$sequence"
+        ],
+
+
+        "output" : 
+        {
+            "type" : "text_stream",
+            "sep" : "\t"
+        }
+    }
+    
+]

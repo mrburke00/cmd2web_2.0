@@ -8,10 +8,11 @@ import io
 import re
 import random
 import cmd2web
-
+from werkzeug.datastructures import ImmutableDict
+from flask import render_template
 from OpenSSL import SSL
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder = "web_src/template", static_folder="web_src/static", static_url_path='')
 
 config = None
 server = None
@@ -32,9 +33,20 @@ def after_request(response):
 def info():
     return json.dumps(server.get_info())
 
+@app.route('/parse', methods=['GET', 'POST'])
+def index():
+    data = ""
+    if request.method == "POST":
+        sequence = request.form.get("sequence")
+        args = request.args.to_dict()
+        args['service'] = 'parse'
+        args['sequence'] = sequence
+        request.args = args
+        service()
+    return render_template('parse.html', jsonfile=data)
+
 @app.route('/')
 def service():
-
     service = request.args.get('service')
 
     if not service:
