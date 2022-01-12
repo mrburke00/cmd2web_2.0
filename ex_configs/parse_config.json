@@ -14,19 +14,19 @@
                 "name" : "executable",
                 "fixed" : "true",
                 "type" : "string",
-                "value" : "/Users/DBurke/Documents/Layerlab/parse_webapp/cmd2web_2.0/src/web_src/static/js/Parse.exe"
+                "value" : "/Users/DBurke/Documents/Layerlab/parse_webapp/cmd2web/src/web_src/static/js/Parse.exe"
             },
             {
                 "name" : "script",
                 "fixed" : "true",
                 "type" : "string",
-                "value" : "/Users/DBurke/Documents/Layerlab/parse_webapp/cmd2web_2.0/src/web_src/static/js/Parse.f"
+                "value" : "/Users/DBurke/Documents/Layerlab/parse_webapp/cmd2web/src/web_src/static/js/Parse.f"
             },
             {
                 "name" : "execute_command",
                 "fixed" : "true",
                 "type" : "string",
-                "value" : "/Users/DBurke/Documents/Layerlab/parse_webapp/cmd2web_2.0/src/web_src/static/js/./Parse.exe"
+                "value" : "/Users/DBurke/Documents/Layerlab/parse_webapp/cmd2web/src/web_src/static/js/./Parse.exe"
             },
             {
                 "name" : "sequence",

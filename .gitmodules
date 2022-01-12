@@ -1,0 +1,3 @@
+[submodule "cmd2web"]
+	path = cmd2web
+	url = git@github.com:mrburke00/cmd2web_2.0.git

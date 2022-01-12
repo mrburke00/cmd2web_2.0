@@ -4,9 +4,11 @@ import re
 import random
 from flask import Flask,send_file
 import requests
+import os
 parse = os.path.abspath('parse_src')
 sys.path.insert(1,parse)
-import fortran_parse
+import fortran_wrapper
+
 
 #{{{def test_required(name, required, config):
 def test_required(name, required, config):
@@ -321,8 +323,8 @@ class Service:
                 for line in open(out_file_name, 'r'):
                     if line.strip() != '':
                         temp.append(line.strip())
-                print(temp)
-                out = fortran_parse.process_parse(temp) 
+                out = fortran_wrapper.fortran_wrap_single(temp) 
+                print(out)
                 return json.dumps(out)
             else:
                 for line in open(out_file_name, 'r'):
